@@ -34,7 +34,7 @@ public class Driver {
                     switch (r2) {
                         case 1://post de texto
                             String texto="";
-                            while(texto==""||texto.length()>40){//escribir texto
+                            while(texto==""||texto.length()>20){//escribir texto
                                 texto=v.ingreso_texto();
                                 if(texto.length()>40){
                                     v.separador();

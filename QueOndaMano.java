@@ -15,55 +15,55 @@ public class QueOndaMano {
     public QueOndaMano(){
 
     }
-    public void newPost_txt(String texto, String hash, String nombre){
+    public void newPost_txt(String texto, String hash, String nombre){//creacion de post de texto
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter f= DateTimeFormatter.ofPattern("HH:mm");
         LocalTime time = LocalTime.now();
-        String fecha = cal.get(Calendar.DAY_OF_MONTH)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.YEAR);
-        String hora = time.format(f)+"";
+        String fecha = cal.get(Calendar.DAY_OF_MONTH)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.YEAR);//fecha
+        String hora = time.format(f)+"";//hora
         posts.add(new Texto(nombre, hora, fecha, hash, texto));
     }
-    public void newPost_multimd(String link, String hash, String nombre, String caract, String tipo){
+    public void newPost_multimd(String link, String hash, String nombre, String caract, String tipo){//creacion de post de multimedia
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter f= DateTimeFormatter.ofPattern("HH:mm");
         LocalTime time = LocalTime.now();
-        String fecha = cal.get(Calendar.DAY_OF_MONTH)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.YEAR);
-        String hora = time.format(f)+"";
+        String fecha = cal.get(Calendar.DAY_OF_MONTH)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.YEAR);//fecha
+        String hora = time.format(f)+"";//hora
         posts.add(new Multimedia(nombre, hora, fecha, hash, link, tipo, caract));
     }
-    public void newPost_emote(int nemote, String hash, String nombre){
+    public void newPost_emote(int nemote, String hash, String nombre){//creacion de post de emotes
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter f= DateTimeFormatter.ofPattern("HH:mm");
         LocalTime time = LocalTime.now();
-        String fecha = cal.get(Calendar.DAY_OF_MONTH)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.YEAR);
-        String hora = time.format(f)+"";
+        String fecha = cal.get(Calendar.DAY_OF_MONTH)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.YEAR);//fecha
+        String hora = time.format(f)+"";//hora
         posts.add(new Emoticon(nombre, hora, fecha, hash, emotes[nemote]));
     }
-    public int getNemotes(){
+    public int getNemotes(){//numero de emotes
         return emotes.length;
     }
-    public int getNposts(){
+    public int getNposts(){//numero de posts
         return posts.size();
     }
-    public String getPosts(String criterio, String busqueda){
+    public String getPosts(String criterio, String busqueda){//busqueda por criterios
         String strpost="";
-        if(criterio.equals("NA")){
+        if(criterio.equals("NA")){//sin criterio
             for(int i=0;i<posts.size();i++){
                 strpost+="("+i+") "+posts.get(i).getPost()+"\n\n";
             }
-        }else if(criterio.equals("HASH")){
+        }else if(criterio.equals("HASH")){//por hashtags
             for(int i=0;i<posts.size();i++){
                 if(posts.get(i).get_hashtags().contains(busqueda)){
                     strpost+="("+i+") "+posts.get(i).getPost()+"\n\n";
                 }
             }
-        }else if(criterio.equals("DATE")){
+        }else if(criterio.equals("DATE")){//por fecha
             for(int i=0;i<posts.size();i++){
                 if(posts.get(i).get_fecha().equals(busqueda)){
                     strpost+="("+i+") "+posts.get(i).getPost()+"\n\n";
                 }
             }
-        }else if(criterio.equals("HOUR")){
+        }else if(criterio.equals("HOUR")){//por hora
             for(int i=0;i<posts.size();i++){
                 if(posts.get(i).get_hora().equals(busqueda)){
                     strpost+="("+i+") "+posts.get(i).getPost()+"\n\n";
@@ -72,31 +72,31 @@ public class QueOndaMano {
         }
         return strpost;
     }
-    public String getEmotes(){
+    public String getEmotes(){//mostrar emotes
         String stremotes="";
         for(int i=0;i<emotes.length;i++){
             stremotes+="("+i+") "+ emotes[i]+"\n";
         }
         return stremotes;
     }
-    public void comentar(int index, String coment){
+    public void comentar(int index, String coment){//añadir comentario
         posts.get(index).set_comentario(coment);
     }
-    public void dar_like(int index){
+    public void dar_like(int index){//agregar like
         posts.get(index).add_like();
     }
-    public String reproducir(int index){
+    public String reproducir(int index){//reproducir
         String reprod= "";
         String tipo = posts.get(index).get_tipo();
-        if(tipo.equals("Imagen")){
+        if(tipo.equals("Imagen")){//imagen
             reprod="Estoy mostrando la imagen: "+posts.get(index).get_mensaje()+" Con: \n"+posts.get(index).get_desc();
-        }else if(tipo.equals("Video")){
+        }else if(tipo.equals("Video")){//video
             reprod="Estoy mostrando el video: "+posts.get(index).get_mensaje()+" Con: \n"+posts.get(index).get_desc();
-        }else if(tipo.equals("Audio")){
+        }else if(tipo.equals("Audio")){//audio
             reprod="Estoy mostrando el audio: "+posts.get(index).get_mensaje()+" Con: \n"+posts.get(index).get_desc();
-        }else if(tipo.equals("Texto")){
+        }else if(tipo.equals("Texto")){//texto
             reprod=posts.get(index).get_mensaje();
-        }else if(tipo.equals("Emoticon")){
+        }else if(tipo.equals("Emoticon")){//emoticon
             reprod=posts.get(index).get_mensaje();
         }
 

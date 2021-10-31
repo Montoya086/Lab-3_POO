@@ -27,30 +27,30 @@ public abstract class Post {
         this.mensaje = mensaje;
         nlikes=0;
     }
-    public void set_comentario(String comentario){
+    public void set_comentario(String comentario){//añadir comentario
         comentarios.add(comentario);
     }
-    public void add_like(){
+    public void add_like(){//dar like
         nlikes++;
     }
-    public String get_hashtags(){
+    public String get_hashtags(){//Devolver hashtags
         return hashtags;
     }
-    public String get_fecha(){
+    public String get_fecha(){//devolver fecha
         return fecha;
     }
-    public String get_hora(){
+    public String get_hora(){//devolver hora
         return hora;
     }
-    public String get_tipo(){
+    public String get_tipo(){//devolver tipo
         return tipo;
     }
-    public String get_mensaje(){
+    public String get_mensaje(){//devolver mensaje
         return mensaje;
     }
-    public String get_desc(){
+    public String get_desc(){//devolver descripcion
         return desc;
     }
-    abstract public String getPost();
+    abstract public String getPost();//devolver post
     
 }

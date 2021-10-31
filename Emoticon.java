@@ -9,7 +9,7 @@ public class Emoticon extends Post{
     public Emoticon(String nombre, String hora, String fecha, String hashtags, String emote){
         super(nombre, hora, fecha, hashtags, "Emoticon", emote);
     }
-    public String getPost(){
+    public String getPost(){//devolver post
         String strcoment="";
         int ncoment=0;
         for(int i=0; i<comentarios.size();i++){

@@ -10,7 +10,7 @@ public class Multimedia extends Post{
         super(nombre, hora, fecha, hashtags, tipo, mensaje);
         desc = caract;
     }
-    public String getPost(){
+    public String getPost(){//devolver post
         String strcoment="";
         int ncoment=0;
         for(int i=0; i<comentarios.size();i++){
