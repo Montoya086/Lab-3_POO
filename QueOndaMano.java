@@ -15,6 +15,13 @@ public class QueOndaMano {
     public QueOndaMano(){
 
     }
+    
+    /** 
+     * @param texto
+     * @param hash
+     * @param hora
+     * @param fecha
+     */
     public void newPost_txt(String texto, String hash, String nombre){//creacion de post de texto
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter f= DateTimeFormatter.ofPattern("HH:mm");
@@ -23,6 +30,15 @@ public class QueOndaMano {
         String hora = time.format(f)+"";//hora
         posts.add(new Texto(nombre, hora, fecha, hash, texto));
     }
+    
+    /** 
+     * @param link
+     * @param hash
+     * @param nombre
+     * @param caract
+     * @param hora
+     * @param fecha
+     */
     public void newPost_multimd(String link, String hash, String nombre, String caract, String tipo){//creacion de post de multimedia
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter f= DateTimeFormatter.ofPattern("HH:mm");
@@ -31,6 +47,15 @@ public class QueOndaMano {
         String hora = time.format(f)+"";//hora
         posts.add(new Multimedia(nombre, hora, fecha, hash, link, tipo, caract));
     }
+    
+    /** 
+     * @param nemote
+     * @param hash
+     * @param hora
+     * @param fecha
+     * @param hash
+     * @param criterio
+     */
     public void newPost_emote(int nemote, String hash, String nombre){//creacion de post de emotes
         Calendar cal = Calendar.getInstance();
         DateTimeFormatter f= DateTimeFormatter.ofPattern("HH:mm");
@@ -39,12 +64,27 @@ public class QueOndaMano {
         String hora = time.format(f)+"";//hora
         posts.add(new Emoticon(nombre, hora, fecha, hash, emotes[nemote]));
     }
+    
+    /** 
+     * @param criterio
+     * @return int
+     */
     public int getNemotes(){//numero de emotes
         return emotes.length;
     }
+    
+    /** 
+     * @param criterio
+     * @return int
+     */
     public int getNposts(){//numero de posts
         return posts.size();
     }
+    
+    /** 
+     * @param criterio
+     * @return String
+     */
     public String getPosts(String criterio, String busqueda){//busqueda por criterios
         String strpost="";
         if(criterio.equals("NA")){//sin criterio
@@ -72,6 +112,10 @@ public class QueOndaMano {
         }
         return strpost;
     }
+    
+    /** 
+     * @return String
+     */
     public String getEmotes(){//mostrar emotes
         String stremotes="";
         for(int i=0;i<emotes.length;i++){

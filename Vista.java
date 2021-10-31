@@ -12,9 +12,14 @@ public class Vista {
     public Vista(){
 
     }
+
     public void bienvenida(){//bienvenida
         System.out.println("Bienvenido a Que Onda Mano!");
     }
+    
+    /** 
+     * @return int
+     */
     public int menu (){//menu principal
         try{ 
             System.out.println("1. Hacer un post");
@@ -31,6 +36,10 @@ public class Vista {
             return 0;
         }
     }
+    
+    /** 
+     * @return int
+     */
     public int menu_post (){//menu de tipo de post
         try{ 
             System.out.println("Ingrese el tipo de post");
@@ -43,6 +52,10 @@ public class Vista {
             return 0;
         }
     }
+    
+    /** 
+     * @return int
+     */
     public int menu_multimedia (){//menu de tipo de multimedia
         try{ 
             System.out.println("Ingrese el tipo de multimedia:");
@@ -55,6 +68,11 @@ public class Vista {
             return 0;
         }
     }
+    
+    /** 
+     * @param emotes
+     * @return int
+     */
     public int emotes (String emotes){//menu de emotes
         try{ 
             System.out.println("Ingrese el emote que quiere publicar:");
@@ -64,6 +82,10 @@ public class Vista {
             return -1;
         }
     }
+    
+    /** 
+     * @return int
+     */
     public int select_post (){ // sellecion del numero de post
         try{ 
             System.out.println("Ingrese numero del post: ");
@@ -72,6 +94,10 @@ public class Vista {
             return -1;
         }
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_nombre(){//ingreo del nombre
         try{
             System.out.println("Ingrese su nombre: ");
@@ -81,6 +107,10 @@ public class Vista {
         }
         
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_hash(){//ingreso del hashtag
         try{
             System.out.println("Ingrese sus hashtags iniciando con \"#\": ");
@@ -90,6 +120,10 @@ public class Vista {
         }
         
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_texto(){//ingreso del texto
         try{
             System.out.println("Ingrese el texto: ");
@@ -99,6 +133,10 @@ public class Vista {
         }
         
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_link(){//ingreso del link
         try{
             System.out.println("Ingrese el URL: ");
@@ -108,6 +146,10 @@ public class Vista {
         }
         
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_size(){//ingreso del tamaño
         try{
             System.out.println("Ingrese el tamaño del archivo en kB: ");
@@ -116,6 +158,10 @@ public class Vista {
             return "";
         }  
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_format(){//ingreso del formato
         try{
             System.out.println("Ingrese el formato del archivo: ");
@@ -124,6 +170,10 @@ public class Vista {
             return "";
         }  
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_resol(){//ingreso de la resolucion
         try{
             System.out.println("Ingrese la resolución de la imagen en megapixeles: ");
@@ -132,6 +182,10 @@ public class Vista {
             return "";
         }  
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_fps(){//ingreso de frames
         try{
             System.out.println("Ingrese el FrameRate del video: ");
@@ -140,6 +194,10 @@ public class Vista {
             return "";
         }  
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_sample(){//ingreso de sample
         try{
             System.out.println("Ingrese el SampleRate del audio en kHz: ");
@@ -148,6 +206,10 @@ public class Vista {
             return "";
         }  
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_bit(){//ingreso de bitdepth
         try{
             System.out.println("Ingrese el BitDepth del audio: ");
@@ -156,6 +218,10 @@ public class Vista {
             return "";
         }  
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_coment(){//ingreso del comentario
         try{
             System.out.println("Ingrese su comentario: ");
@@ -165,6 +231,10 @@ public class Vista {
         }
         
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_fecha(){//ingreso de fecha
         try{
             System.out.println("Ingrese la fecha (dd/mm/yyyy): ");
@@ -174,6 +244,10 @@ public class Vista {
         }
         
     }
+    
+    /** 
+     * @return String
+     */
     public String ingreso_hora(){//ingreso de hora
         try{
             System.out.println("Ingrese la hora en formato de 24 horas (hh:mm): ");
@@ -186,9 +260,12 @@ public class Vista {
     public void posts(String posts){//mostrar posts
         System.out.println(posts);
     }
+    
     public void separador(){//separador
         System.out.println("\n************************************************************\n");
     }
+    
+
     public void chars(){//
         System.out.println("El texto sobrepasa los 20 caracteres");//mensaje de exceso de caracteres
     }

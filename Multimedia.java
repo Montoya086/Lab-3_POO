@@ -10,6 +10,10 @@ public class Multimedia extends Post{
         super(nombre, hora, fecha, hashtags, tipo, mensaje);
         desc = caract;
     }
+    
+    /** 
+     * @return String
+     */
     public String getPost(){//devolver post
         String strcoment="";
         int ncoment=0;

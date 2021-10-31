@@ -9,6 +9,10 @@ public class Texto extends Post {
     public Texto(String nombre, String hora, String fecha, String hashtags, String mensaje){
         super(nombre, hora, fecha, hashtags, "Texto", mensaje);
     }
+
+    /** 
+     * @return String
+     */
     public String getPost(){//devolver post
         String strcoment="";
         int ncoment=0;
