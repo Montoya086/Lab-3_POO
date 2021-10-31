@@ -1,3 +1,10 @@
+/*
+Nombre: Andrés Estuardo Montoya Wilhelm
+Programa: Vista.java
+Lenguaje: Java
+Creación: 29/10/2021
+Modificacion: 30/10/2021
+*/
 import java.util.Scanner;
 
 public class Vista {
@@ -15,9 +22,10 @@ public class Vista {
             System.out.println("3. Dar like");
             System.out.println("4. Buscar un hashtag");
             System.out.println("5. Buscar una fecha");
-            System.out.println("6. Reproducir");
-            System.out.println("7. Mostrar todo");
-            System.out.println("8. Salir");
+            System.out.println("6. Buscar una hora");
+            System.out.println("7. Reproducir");
+            System.out.println("8. Mostrar todo");
+            System.out.println("9. Salir");
             return Integer.parseInt(sc.nextLine());
         }catch(Exception e){
             return 0;
@@ -51,6 +59,14 @@ public class Vista {
         try{ 
             System.out.println("Ingrese el emote que quiere publicar:");
             System.out.println(emotes);
+            return Integer.parseInt(sc.nextLine());
+        }catch(Exception e){
+            return -1;
+        }
+    }
+    public int select_post (){
+        try{ 
+            System.out.println("Ingrese numero del post: ");
             return Integer.parseInt(sc.nextLine());
         }catch(Exception e){
             return -1;
@@ -140,6 +156,33 @@ public class Vista {
             return "";
         }  
     }
+    public String ingreso_coment(){
+        try{
+            System.out.println("Ingrese su comentario: ");
+            return sc.nextLine();
+        }catch(Exception e){
+            return "";
+        }
+        
+    }
+    public String ingreso_fecha(){
+        try{
+            System.out.println("Ingrese la fecha (dd/mm/yyyy): ");
+            return sc.nextLine();
+        }catch(Exception e){
+            return "";
+        }
+        
+    }
+    public String ingreso_hora(){
+        try{
+            System.out.println("Ingrese la hora en formato de 24 horas (hh:mm): ");
+            return sc.nextLine();
+        }catch(Exception e){
+            return "";
+        }
+        
+    }
     public void posts(String posts){
         System.out.println(posts);
     }
@@ -151,5 +194,17 @@ public class Vista {
     }
     public void link(){
         System.out.println("Ingrese unicamente URL's validos");
+    }
+    public void comentario(){
+        System.out.println("Comentario publicado");
+    }
+    public void post(){
+        System.out.println("Se ha publicado el post");
+    }
+    public void like(){
+        System.out.println("Se ha agregado su like");
+    }
+    public void nopost(){
+        System.out.println("No hay posts disponibles al momento");
     }
 }

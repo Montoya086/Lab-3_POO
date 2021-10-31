@@ -1,6 +1,13 @@
+/*
+Nombre: Andrés Estuardo Montoya Wilhelm
+Programa: Emoticon.java
+Lenguaje: Java
+Creación: 29/10/2021
+Modificacion: 30/10/2021
+*/
 public class Emoticon extends Post{
     public Emoticon(String nombre, String hora, String fecha, String hashtags, String emote){
-        super(nombre, hora, fecha, hashtags, "Texto", emote);
+        super(nombre, hora, fecha, hashtags, "Emoticon", emote);
     }
     public String getPost(){
         String strcoment="";

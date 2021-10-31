@@ -1,3 +1,10 @@
+/*
+Nombre: Andrés Estuardo Montoya Wilhelm
+Programa: Multimedia.java
+Lenguaje: Java
+Creación: 29/10/2021
+Modificacion: 30/10/2021
+*/
 public class Multimedia extends Post{
     public Multimedia(String nombre, String hora, String fecha, String hashtags, String mensaje, String tipo, String caract){
         super(nombre, hora, fecha, hashtags, tipo, mensaje);

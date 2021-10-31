@@ -1,3 +1,10 @@
+/*
+Nombre: Andrés Estuardo Montoya Wilhelm
+Programa: Texto.java
+Lenguaje: Java
+Creación: 29/10/2021
+Modificacion: 30/10/2021
+*/
 public class Texto extends Post {
     public Texto(String nombre, String hora, String fecha, String hashtags, String mensaje){
         super(nombre, hora, fecha, hashtags, "Texto", mensaje);
